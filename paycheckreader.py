@@ -15,5 +15,5 @@ page = reader.pages[0]
 text = page.extract_text()
 print(text)
 
-with open("paycheck.csv","w",newline="",encoding="utf-8-sig") as pdata
+with open("pdfnames.csv","r",encoding="utf-8-sig") as pdfs, open("paycheck.csv","w",newline="",encoding="utf-8-sig") as pdata
   csvout = csv.writer(pdata)
