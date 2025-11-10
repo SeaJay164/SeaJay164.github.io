@@ -1,5 +1,6 @@
 # importing required modules
 from pypdf import PdfReader
+import csv
 
 # creating a pdf reader object
 reader = PdfReader('example.pdf')
@@ -13,3 +14,6 @@ page = reader.pages[0]
 # extracting text from page
 text = page.extract_text()
 print(text)
+
+with open("pdfnames.csv","r",encoding="utf-8-sig") as pdfs, open("paycheck.csv","w",newline="",encoding="utf-8-sig") as pdata
+  csvout = csv.writer(pdata)
