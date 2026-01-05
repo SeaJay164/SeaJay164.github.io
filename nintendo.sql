@@ -1,7 +1,14 @@
+CREATE TABLE companies (
+	company_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	company TEXT
+);
+
 CREATE TABLE systems (
 	system_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	system TEXT,
-	system_order INTEGER
+	company_id INTEGER REFERS TO companies (company_id),
+	system_order INTEGER,
+	company_order INTEGER
 );
 
 CREATE TABLE franchises (
@@ -29,21 +36,28 @@ CREATE TABLE games (
 	played TEXT
 );
 
-INSERT INTO systems (system, system_order)
+INSERT INTO companies (company)
 VALUES
-	('NES', 1),
-	('Gameboy', 2),
-	('SNES', 3),
-	('N64', 4),
-	('Gameboy Color', 5),
-	('GBA', 6),
-	('Gamecube', 7),
-	('NDS', 8),
-	('Wii', 9),
-	('N3DS', 10),
-	('Wii U', 11),
-	('Switch', 12),
-	('Switch 2', 13);
+	('Nintendo'),
+	('Sega'),
+	('Sony'),
+	('Microsoft');
+
+INSERT INTO systems (system, company_id, company_order)
+VALUES
+	('NES', 1, 1),
+	('Gameboy', 1, 2),
+	('SNES', 1, 3),
+	('N64', 1, 4),
+	('Gameboy Color', 1, 5),
+	('GBA', 1, 6),
+	('Gamecube', 1, 7),
+	('NDS', 1, 8),
+	('Wii', 1, 9),
+	('N3DS', 1, 10),
+	('Wii U', 1, 11),
+	('Switch', 1, 12),
+	('Switch 2', 1, 13);
 
 INSERT INTO franchises (franchise)
 VALUES
