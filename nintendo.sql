@@ -80,7 +80,7 @@ VALUES
 	($$Xenoblade$$),
 	($$Bayonetta$$),
 	($$Splatoon$$);
-'
+
 INSERT INTO subfranchises (subfranchise)
 VALUES
 	('None'),
